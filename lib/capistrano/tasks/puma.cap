@@ -40,7 +40,7 @@ namespace :puma do
         if  fetch(:puma_cmd)
           execute "#{fetch(:puma_cmd)} -C #{fetch(:puma_conf)}"
         else
-          execute :puma, "-C #{fetch(:puma_conf)}"
+          execute :bunlde, :puma, "-C #{fetch(:puma_conf)}"
         end
       end
     end
@@ -55,7 +55,7 @@ namespace :puma do
           if  fetch(:pumactl_cmd)
             execute "#{fetch(:pumactl_cmd)} -S #{fetch(:puma_state)} #{command}"
           else
-            execute :pumactl, "-S #{fetch(:puma_state)} #{command}"
+            execute :bundle, :pumactl, "-S #{fetch(:puma_state)} #{command}"
           end
         end
       end
